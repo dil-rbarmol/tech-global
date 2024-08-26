@@ -1,0 +1,61 @@
+.services {
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  text-align: center; /* Center align text for better readability */
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between;
+  gap: 15px;
+  margin: 0 auto; /* Center align the services list */
+  max-width: 1200px; /* Limit maximum width */
+}
+
+.service-item {
+  flex: 1;
+  min-width: 280px; /* Minimum width to maintain layout */
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visual effect */
+}
+
+.service-item h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.service-item p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .services-list {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .service-item {
+    // width: 100%; /* Full width for each service item on small screens */
+    max-width: 600px; /* Limit width for readability */
+    margin-bottom: 15px; /* Add space between items */
+    min-width: 100px;
+    width: -webkit-fill-available;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-item h3 {
+    font-size: 18px; /* Reduce font size for smaller screens */
+  }
+
+  .service-item p {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+}

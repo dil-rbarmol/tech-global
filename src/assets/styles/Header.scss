@@ -1,0 +1,136 @@
+// _variables.scss
+$header-bg-transparent: rgba(0, 0, 0, 0);
+$header-bg-scrolled: rgba(0, 0, 0, 0.8);
+$transition-speed: 0.3s;
+$menu-toggle-size: 24px;
+$padding-mobile: 10px 15px;
+$padding-desktop: 15px 20px;
+$logo-size-desktop: 24px;
+$logo-size-mobile: 20px;
+$nav-gap: 15px;
+$nav-padding-desktop: 100px;
+$nav-padding-mobile: 25px;
+$font-size-desktop: 14px;
+$font-size-mobile: 12px;
+$btn-font-size-mobile: 14px;
+$btn-padding-mobile: 8px 16px;
+$btn-font-size-desktop: 16px;
+$btn-padding-desktop: 10px 20px;
+// _variables.scss
+$underline-color: #fff; // Color for the underline
+$underline-height: 2px; // Height of the underline
+$underline-offset: 5px; // Space between text and underline
+
+// _header.scss
+
+// _header.scss
+
+.header {
+  background-color: $header-bg-transparent;
+  color: white;
+  padding: $padding-desktop;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color $transition-speed ease;
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      font-size: $logo-size-desktop;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: $nav-gap;
+      padding-right: $nav-padding-desktop;
+
+      a {
+        color: white;
+        text-transform: uppercase;
+        font-size: $font-size-desktop;
+        text-decoration: none;
+        position: relative;
+        transition: color $transition-speed ease;
+        
+        &.active {
+          font-weight: bold; // Optional: bold font for active link
+          color: $underline-color; // Color change for active link
+        }
+
+        &.active::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: $underline-height;
+          background: $underline-color;
+          position: absolute;
+          bottom: -$underline-offset; // Space between text and underline
+          left: 0;
+          transition: background $transition-speed ease;
+        }
+      }
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: $menu-toggle-size;
+      cursor: pointer;
+    }
+  }
+
+  &.scrolled {
+    background-color: $header-bg-scrolled;
+  }
+}
+
+// Media Queries
+@media (max-width: 1024px) {
+  .header {
+    .nav-links {
+      padding-right: $nav-padding-mobile;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: $padding-mobile;
+
+    .nav {
+      .logo {
+        font-size: $logo-size-mobile;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+
+        &.active {
+          display: flex;
+        }
+
+        a {
+          font-size: $font-size-mobile;
+          padding: 15px;
+        }
+      }
+
+      .nav-toggle {
+        display: block;
+        padding-right: $nav-padding-mobile;
+      }
+    }
+  }
+}

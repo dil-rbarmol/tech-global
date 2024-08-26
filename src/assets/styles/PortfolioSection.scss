@@ -1,0 +1,58 @@
+.portfolio {
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  padding: 20px; /* Add some padding for better spacing */
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between;
+  gap: 15px;
+  margin: 0 auto; /* Center align the portfolio list */
+  max-width: 1200px; /* Limit maximum width */
+}
+
+.portfolio-item {
+  flex: 1;
+  min-width: 280px; /* Minimum width to maintain layout */
+  text-align: center;
+  border: 1px solid #ddd; /* Add border for visual separation */
+  border-radius: 4px;
+  padding: 15px; /* Add padding for better spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for visual effect */
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .portfolio-list {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .portfolio-item {
+    // width: 100%; /* Full width for each portfolio item on small screens */
+    max-width: 600px; /* Limit width for readability */
+    margin-bottom: 15px; /* Add space between items */
+    min-width: 100px;
+    width: -webkit-fill-available;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .portfolio-item h3 {
+    font-size: 18px; /* Reduce font size for smaller screens */
+  }
+
+  .portfolio-item img {
+    border-radius: 0; /* Remove border radius on very small screens */
+  }
+}

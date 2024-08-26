@@ -1,0 +1,74 @@
+.contact {
+  background-color: #fff;
+  color: #333;
+  padding: 20px; /* Add padding for better spacing */
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px; /* Add padding inside the form */
+  border: 1px solid #ddd; /* Add a border around the form */
+  border-radius: 8px; /* Rounded corners for the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for visual effect */
+  background-color: #fafafa; /* Slight background color for the form */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Make labels bold for better readability */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px; /* Increase font size for better readability */
+  max-width: -webkit-fill-available;
+}
+
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing of the textarea */
+  min-height: 100px; /* Set a minimum height for the textarea */
+  width: -webkit-fill-available;
+}
+
+/* Submit button styles */
+.contact button {
+  background-color: #007bff; /* Primary button color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact button:hover {
+  background-color: #0056b3; /* Darker button color on hover */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .contact form {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  .form-group {
+    margin-bottom: 15px; /* Reduce margin on smaller screens */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px; /* Reduce font size on smaller screens */
+    max-width: -webkit-fill-available;
+  }
+}
